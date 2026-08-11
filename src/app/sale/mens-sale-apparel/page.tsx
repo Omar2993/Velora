@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Newarrivals = () => {
+const SaleApparel = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Newarrivals = () => {
   )
 }
 
-export default Newarrivals
+export default SaleApparel

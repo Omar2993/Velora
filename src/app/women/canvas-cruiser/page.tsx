@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Newarrivals = () => {
+const Cruiser = () => {
   return (
     <div>
-      
+      Cruiser
     </div>
   )
 }
 
-export default Newarrivals
+export default Cruiser

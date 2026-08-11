@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Newarrivals = () => {
+const SlipOns = () => {
   return (
     <div>
-      
+      Slip Ons
     </div>
   )
 }
 
-export default Newarrivals
+export default SlipOns

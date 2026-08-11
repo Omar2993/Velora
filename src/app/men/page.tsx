@@ -1,10 +1,14 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 
 const Men = () => {
   return (
     <main className="p-10">
-      <button className="rounded-2xl border border-black h-10  w-full ">
+      <button
+        onClick={() => window.dispatchEvent(new Event("open-menu"))}
+        className="rounded-2xl border border-black h-10 w-full"
+      >
         MEN
       </button>
 
@@ -16,15 +20,15 @@ const Men = () => {
 
         <ul className="flex flex-col gap-2">
           <li>
-            <Link href="/new-arrivals">New Arrivals</Link>
+            <Link href="/newarrivals">New Arrivals</Link>
           </li>
 
           <li>
-            <Link href="/bestsellers">Bestsellers</Link>
+            <Link href="/men/bests-sellers">Bestsellers</Link>
           </li>
 
           <li>
-            <Link href="/leather-alternative">Leather Alternative</Link>
+            <Link href="/men/leather-alternative">Leather Alternative</Link>
           </li>
         </ul>
       </div>
@@ -36,12 +40,24 @@ const Men = () => {
         </div>
 
         <ul className="flex flex-col gap-2">
-          <li>Shop All</li>
-          <li>Sneakers</li>
-          <li>Slip Ons</li>
-          <li>Sandals</li>
-          <li>Active</li>
-          <li>All-Weather</li>
+          <li>
+            <Link href="/men/shop-all">Shop All</Link>
+          </li>
+          <li>
+            <Link href="/men/sneakers">Sneakers</Link>
+          </li>
+          <li>
+            <Link href="/men/slip-ons">Slip Ons</Link>
+          </li>
+          <li>
+            <Link href="/men/sandals">Sandals</Link>
+          </li>
+          <li>
+            <Link href="/men/active">Active</Link>
+          </li>
+          <li>
+            <Link href="/men/all-weather">All-Weather</Link>
+          </li>
         </ul>
       </div>
 
@@ -52,9 +68,15 @@ const Men = () => {
         </div>
 
         <ul className="flex flex-col gap-2">
-          <li>Runner NZ</li>
-          <li>Cruiser</li>
-          <li>Tree Runner NZ</li>
+          <li>
+            <Link href="/men/runner-nz">Runner NZ</Link>
+          </li>
+          <li>
+            <Link href="/men/cruiser">Cruiser</Link>
+          </li>
+          <li>
+            <Link href="/men/tree-runner-nz">Tree Runner NZ</Link>
+          </li>
         </ul>
       </div>
 
@@ -65,8 +87,12 @@ const Men = () => {
         </div>
 
         <ul className="flex flex-col gap-2">
-          <li>Socks</li>
-          <li>Men's Apparel</li>
+          <li>
+            <Link href="/men/socks">Socks</Link>
+          </li>
+          <li>
+            <Link href="/men/mens-apparel">Men's Apparel</Link>
+          </li>
         </ul>
       </div>
     </main>

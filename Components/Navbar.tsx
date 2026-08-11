@@ -1,10 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    const openMenu = () => {
+      setMenuOpen(true);
+    };
+
+    window.addEventListener("open-menu", openMenu);
+
+    return () => {
+      window.removeEventListener("open-menu", openMenu);
+    };
+  }, []);
   return (
     <>
       {/* Full Screen Menu */}
@@ -47,8 +58,10 @@ const Navbar = () => {
           </button>
 
           {/* Center - Logo */}
-          <div className="absolute left-1/2 -translate-x-1/2">
-            <h1 className="text-2xl font-bold tracking-tight">Velora</h1>
+          <div  className="absolute left-1/2 -translate-x-1/2" onClick={()=>setMenuOpen(false)}>
+            <Link href="/">
+              <h1 className="text-2xl font-bold tracking-tight">Velora</h1>
+            </Link>
           </div>
 
           {/* Right - Search + Cart */}

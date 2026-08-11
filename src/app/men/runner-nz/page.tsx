@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Newarrivals = () => {
+const RunnerNZ = () => {
   return (
     <div>
-      
+      Runner NZ
     </div>
   )
 }
 
-export default Newarrivals
+export default RunnerNZ
