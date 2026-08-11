@@ -1,26 +1,98 @@
 @import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #edeae4;
+  --textColor: #ddd;
+  --softBg: #1f273a;
+  --softTextColor: #a6a6a6;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  cursor: url("/cursor.svg"), auto;
+}
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  /* cursor: url("/cursor.svg"), auto !important; */
+  /* a,
+    button,
+    input,
+    textarea,
+    select {
+      cursor: url("/cursor.svg"), auto !important;
+    } */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.light {
+  --bg: #5c461a;
+  --textColor: #ddd;
+  --softBg: #1f273a;
+  --softTextColor: #a6a6a6;
+}
+.containerpage {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+.wrapperpage {
+  max-width: 1526px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--bg);
+  padding-left: 80px;
+  padding-right: 80px;
+}
+a[href] {
+  cursor: pointer;
+}
+@media screen and (max-width: 1536px) {
+  .wrapperpage {
+    max-width: 1366px;
   }
 }
+@media screen and (max-width: 1280px) {
+  .wrapperpage {
+    max-width: 1024px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .wrapperpage {
+    max-width: 768px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapperpage {
+    max-width: 640px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .wrapperpage {
+    max-width: 475px;
+  }
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 25%;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 75%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
