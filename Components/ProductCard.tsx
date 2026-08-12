@@ -1,16 +1,5 @@
 import Image from "next/image";
-
-type Product = {
-  id: string;
-  image: string;
-  title: string;
-  description: string;
-  price: number;
-  category: string;
-  type: string;
-  featured: boolean;
-  bestSeller: boolean;
-};
+import type { Product } from "@/app/data/products";
 
 type ProductCardProps = {
   product: Product;

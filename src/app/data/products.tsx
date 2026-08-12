@@ -1,4 +1,16 @@
-export const products = [
+export type Product = {
+  id: string;
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+  category: string;
+  type: string;
+  featured: boolean;
+  bestSeller: boolean;
+};
+
+export const products: Product[] = [
   {
     id: "velora-classic",
     image: "/images/card1.jpg",
