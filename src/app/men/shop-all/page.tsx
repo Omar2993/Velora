@@ -1,11 +1,12 @@
-import React from 'react'
+import ProductGrid from "../../../../Components/ProductGrid";
+import { products } from "../../data/products";
 
-const ShopAll = () => {
-  return (
-    <div>
-      Shop All
-    </div>
-  )
-}
+const MenShopAll = () => {
+  const menProducts = products.filter(
+    (product) => product.category === "men"
+  );
 
-export default ShopAll
+  return <ProductGrid products={menProducts} />;
+};
+
+export default MenShopAll;

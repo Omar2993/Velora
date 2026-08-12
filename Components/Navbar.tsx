@@ -1,10 +1,25 @@
 "use client";
 
+import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showClose, setShowClose] = useState(false);
+  const router = useRouter();
+
+  const handleMenu = () => {
+    if (showClose) {
+      setMenuOpen(false);
+      setShowClose(false);
+      router.push("/");
+    } else {
+      setMenuOpen(true);
+      setShowClose(true);
+    }
+  };
   useEffect(() => {
     const openMenu = () => {
       setMenuOpen(true);
@@ -16,6 +31,12 @@ const Navbar = () => {
       window.removeEventListener("open-menu", openMenu);
     };
   }, []);
+  const handleNavigate = () => {
+    setTimeout(() => {
+      setMenuOpen(false);
+    }, 100);
+  
+  };
   return (
     <>
       {/* Full Screen Menu */}
@@ -23,23 +44,23 @@ const Navbar = () => {
       {menuOpen && (
         <div className="fixed inset-0 z-10 h-screen w-full border border-black bg-[#edeae4]">
           <div className="flex h-full flex-col items-center justify-center gap-5">
-            <Link href="/newarrivals" onClick={() => setMenuOpen(false)}>
+            <Link href="/newarrivals" onClick={handleNavigate}>
               NEW ARRIVALS
             </Link>
 
-            <Link href="/shopall" onClick={() => setMenuOpen(false)}>
+            <Link href="/shopall" onClick={handleNavigate}>
               SHOP ALL
             </Link>
 
-            <Link href="/men" onClick={() => setMenuOpen(false)}>
+            <Link href="/men" onClick={handleNavigate}>
               MEN
             </Link>
 
-            <Link href="/women" onClick={() => setMenuOpen(false)}>
+            <Link href="/women" onClick={handleNavigate}>
               WOMEN
             </Link>
 
-            <Link href="/sale" onClick={() => setMenuOpen(false)}>
+            <Link href="/sale" onClick={handleNavigate}>
               SALE
             </Link>
           </div>
@@ -51,14 +72,17 @@ const Navbar = () => {
           {/* Left - Menu */}
 
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={handleMenu}
             className="border border-black px-5 py-2 rounded-2xl"
           >
-            {menuOpen ? "CLOSE" : "MENU"}
+            {showClose ? "CLOSE" : "MENU"}
           </button>
 
           {/* Center - Logo */}
-          <div  className="absolute left-1/2 -translate-x-1/2" onClick={()=>setMenuOpen(false)}>
+          <div
+            className="absolute left-1/2 -translate-x-1/2"
+            onClick={() => setMenuOpen(false)}
+          >
             <Link href="/">
               <h1 className="text-2xl font-bold tracking-tight">Velora</h1>
             </Link>

@@ -20,7 +20,7 @@ const Men = () => {
 
         <ul className="flex flex-col gap-2">
           <li>
-            <Link href="/newarrivals">New Arrivals</Link>
+            <Link href="/men/new-arrivals">New Arrivals</Link>
           </li>
 
           <li>

@@ -1,11 +1,10 @@
-import React from 'react'
+import ProductGrid from "../../../../Components/ProductGrid";
+import { products } from "../../data/products";
 
-const Newarrivals = () => {
+const NewArrivals = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <ProductGrid products={products.filter((product) => product.featured)} />
+  );
+};
 
-export default Newarrivals
+export default NewArrivals;
