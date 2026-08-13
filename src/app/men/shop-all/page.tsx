@@ -1,12 +1,14 @@
-import ProductGrid from "../../../../Components/ProductGrid";
-import { products } from "../../data/products";
+import { products } from "@/app/data/products";
+import ProductCard from "../../../Components/ProductCard";
 
-const MenShopAll = () => {
-  const menProducts = products.filter(
-    (product) => product.category === "men"
+export default function ShopAllPage() {
+  return (
+    <main className="w-full">
+      <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </main>
   );
-
-  return <ProductGrid products={menProducts} />;
-};
-
-export default MenShopAll;
+}
