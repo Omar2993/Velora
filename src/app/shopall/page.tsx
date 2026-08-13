@@ -1,43 +1,5 @@
+import { products } from "@/app/data/products";
 import ProductCard from "../../../Components/ProductCard";
-
-const products = [
-  {
-    image: "/images/card1.jpg",
-    title: "Velora Classic",
-    description: "Premium everyday wear",
-    price: "$12",
-  },
-  {
-    image: "/images/card2.jpg",
-    title: "Velora Premium",
-    description: "Modern premium collection",
-    price: "$12",
-  },
-  {
-    image: "/images/card3.jpg",
-    title: "Velora Sport",
-    description: "Comfortable sport wear",
-    price: "$12",
-  },
-  {
-    image: "/images/card1.jpg",
-    title: "Velora Essential",
-    description: "Simple and comfortable",
-    price: "$12",
-  },
-  {
-    image: "/images/card2.jpg",
-    title: "Velora Urban",
-    description: "Modern urban style",
-    price: "$12",
-  },
-  {
-    image: "/images/card3.jpg",
-    title: "Velora Daily",
-    description: "Perfect for everyday use",
-    price: "$12",
-  },
-];
 
 const ShopAll = () => {
   return (
@@ -48,11 +10,8 @@ const ShopAll = () => {
 
       <section className="p-4">
         <div className="grid grid-cols-2 gap-3">
-          {products.map((product, index) => (
-            <ProductCard
-              key={index}
-              product={product}
-            />
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
