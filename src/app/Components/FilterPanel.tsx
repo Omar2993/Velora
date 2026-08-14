@@ -21,6 +21,7 @@ type FilterPanelProps = {
   onClose: () => void;
   onApply: () => void;
 };
+
 const FilterPanel = ({
   productCount,
 
@@ -40,11 +41,11 @@ const FilterPanel = ({
   onSizeChange,
 
   onClose,
-    onApply,
+  onApply,
 }: FilterPanelProps) => {
   return (
     <section className="fixed inset-0 z-[9999] h-screen w-screen overflow-y-auto bg-white">
-      {/* HEADER */}
+      {/* ================= HEADER ================= */}
 
       <div className="relative flex h-14 items-center border-b border-black px-4">
         <h2 className="text-sm font-semibold">
@@ -64,7 +65,7 @@ const FilterPanel = ({
         </button>
       </div>
 
-      {/* CONTENT */}
+      {/* ================= CONTENT ================= */}
 
       <div className="space-y-10 px-4 py-6">
 
@@ -76,9 +77,8 @@ const FilterPanel = ({
           </h3>
 
           <p className="mb-4 max-w-sm text-sm leading-5 text-gray-600">
-            Most of our shoes only come in full sizes.
-            If you're a half size, select your nearest
-            whole size too.
+            Most of our shoes only come in full sizes. If you're a half size,
+            select your nearest whole size too.
           </p>
 
           <div className="grid grid-cols-4 gap-1">
@@ -114,9 +114,7 @@ const FilterPanel = ({
                 key={size}
                 onClick={() =>
                   onSizeChange(
-                    selectedSize === size
-                      ? ""
-                      : size
+                    selectedSize === size ? "" : size
                   )
                 }
                 className={`min-h-12 border border-gray-300 px-1 text-xs ${
@@ -152,9 +150,7 @@ const FilterPanel = ({
                 key={name}
                 onClick={() =>
                   onColorChange(
-                    selectedColor === name
-                      ? ""
-                      : name
+                    selectedColor === name ? "" : name
                   )
                 }
                 className="flex items-center gap-3 text-left text-sm"
@@ -194,14 +190,10 @@ const FilterPanel = ({
               >
                 <input
                   type="checkbox"
-                  checked={
-                    selectedPrice === value
-                  }
+                  checked={selectedPrice === value}
                   onChange={() =>
                     onPriceChange(
-                      selectedPrice === value
-                        ? ""
-                        : value
+                      selectedPrice === value ? "" : value
                     )
                   }
                   className="h-4 w-4"
@@ -233,14 +225,10 @@ const FilterPanel = ({
               >
                 <input
                   type="checkbox"
-                  checked={
-                    selectedType === value
-                  }
+                  checked={selectedType === value}
                   onChange={() =>
                     onTypeChange(
-                      selectedType === value
-                        ? ""
-                        : value
+                      selectedType === value ? "" : value
                     )
                   }
                   className="h-4 w-4"
@@ -275,9 +263,7 @@ const FilterPanel = ({
               >
                 <input
                   type="checkbox"
-                  checked={
-                    selectedMaterial === material
-                  }
+                  checked={selectedMaterial === material}
                   onChange={() =>
                     onMaterialChange(
                       selectedMaterial === material
@@ -293,17 +279,18 @@ const FilterPanel = ({
             ))}
           </div>
         </div>
-
       </div>
-       {/* APPLY */}
-  <div className="fixed bottom-0 left-0 w-full border-t border-gray-200 bg-white p-4">
-    <button
-      onClick={onApply}
-      className="w-full rounded-full bg-black py-4 text-sm font-semibold text-white"
-    >
-      APPLY
-    </button>
-    </div>
+
+      {/* ================= APPLY ================= */}
+
+      <div className="fixed bottom-0 left-0 w-full border-t border-gray-200 bg-white p-4">
+        <button
+          onClick={onApply}
+          className="w-full rounded-full bg-black py-4 text-sm font-semibold text-white"
+        >
+          APPLY
+        </button>
+      </div>
     </section>
   );
 };

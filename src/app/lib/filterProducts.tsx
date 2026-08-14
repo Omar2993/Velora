@@ -9,7 +9,7 @@ export function filterProducts(
     // COLOR
     if (
       filters.selectedColor &&
-      product.color !== filters.selectedColor
+      product.colors !== filters.selectedColor
     ) {
       return false;
     }

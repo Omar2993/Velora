@@ -6,7 +6,9 @@ export type Product = {
   price: number;
   category: string;
   type: string;
-  color: string;
+
+  colors: string;
+
   size: string[];
   material: string;
   featured: boolean;
