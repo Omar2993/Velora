@@ -1,8 +1,8 @@
 import { products } from "@/app/data/products";
-import ProductCard from "../../../../Components/ProductCard";
+import ProductCard from "../../Components/ProductCard";
 
 const bestSellerProducts = products.filter(
-  (product) => product.bestSeller === true
+  (product) => product.bestSeller === true,
 );
 
 export default function BestSellersPage() {

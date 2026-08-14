@@ -1,8 +1,8 @@
 import { products } from "@/app/data/products";
-import ProductCard from "../../../../Components/ProductCard";
+import ProductCard from "../../Components/ProductCard";
 
 const slipOnProducts = products.filter(
-  (product) => product.type === "slip-ons"
+  (product) => product.type === "slip-ons",
 );
 
 export default function SlipOnsPage() {

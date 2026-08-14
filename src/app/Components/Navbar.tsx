@@ -4,6 +4,9 @@ import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+const handleSearch = () => {
+  window.dispatchEvent(new Event("open-search"));
+};
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -90,9 +93,12 @@ const Navbar = () => {
 
           {/* Right - Search + Cart */}
           <div className="ml-auto flex items-center gap-3">
-            <button className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-black/5">
-              🔍
-            </button>
+         <button
+  onClick={handleSearch}
+  className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-black/5"
+>
+  🔍
+</button>
 
             <button className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-black/5">
               🛒

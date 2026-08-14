@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Product } from "@/app/data/products";
+import type { Product } from "@/app/types/product";
 
 type ProductCardProps = {
   product: Product;
@@ -18,17 +18,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       <div className="p-3">
-        <h3 className="text-sm font-medium">
-          {product.title}
-        </h3>
+        <h3 className="text-sm font-medium">{product.title}</h3>
 
-        <p className="mt-1 text-xs text-gray-600">
-          {product.description}
-        </p>
+        <p className="mt-1 text-xs text-gray-600">{product.description}</p>
 
-        <p className="mt-2 text-sm font-semibold">
-          ${product.price}
-        </p>
+        <p className="mt-2 text-sm font-semibold">${product.price}</p>
 
         <button className="mt-3 w-full rounded-xl border border-black px-3 py-2 text-xs">
           Add to Cart

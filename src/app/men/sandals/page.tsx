@@ -1,9 +1,7 @@
 import { products } from "@/app/data/products";
-import ProductCard from "../../../../Components/ProductCard";
+import ProductCard from "../../Components/ProductCard";
 
-const sandalProducts = products.filter(
-  (product) => product.type === "sandals"
-);
+const sandalProducts = products.filter((product) => product.type === "sandals");
 
 export default function SandalsPage() {
   return (

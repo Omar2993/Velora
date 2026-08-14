@@ -1,5 +1,5 @@
 import { products } from "@/app/data/products";
-import ProductCard from "../../../../Components/ProductCard";
+import ProductCard from "../../Components/ProductCard";
 
 const allWeatherProducts = products.filter(
   (product) => product.category === "men",
